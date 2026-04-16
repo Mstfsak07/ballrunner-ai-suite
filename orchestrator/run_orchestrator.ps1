@@ -19,7 +19,9 @@ param(
   [switch]$CompactIncludeAssigned,
   [switch]$UseDispatchProfile,
   [switch]$DispatchAnalytics,
-  [int]$AnalyticsLimit = 30
+  [int]$AnalyticsLimit = 30,
+  [switch]$CheckPrereqs,
+  [switch]$OrchestratorPreflight
 )
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -129,6 +131,18 @@ if ($DispatchAnalytics) {
   exit $LASTEXITCODE
 }
 
+if ($CheckPrereqs) {
+  powershell -ExecutionPolicy Bypass -File "$root\check_prereqs.ps1"
+  exit $LASTEXITCODE
+}
+
+if ($OrchestratorPreflight) {
+  $args = @("-ExecutionPolicy", "Bypass", "-File", "$root\run_orchestrator_preflight.ps1")
+  if ($CleanupStale) { $args += "-CleanupStale" }
+  powershell @args
+  exit $LASTEXITCODE
+}
+
 Write-Host "Usage:"
 Write-Host "  .\\run_orchestrator.ps1 -AssignNext"
 Write-Host "  .\\run_orchestrator.ps1 -TaskId TASK-001"
@@ -142,3 +156,5 @@ Write-Host "  .\\run_orchestrator.ps1 -Cycle -CycleLimit 3 -DispatchTimeoutSec 1
 Write-Host "  .\\run_orchestrator.ps1 -ExportCompactQueue -CompactLimit 30 -CompactIncludeAssigned"
 Write-Host "  .\\run_orchestrator.ps1 -Dispatch -ExecuteDispatch -UseDispatchProfile"
 Write-Host "  .\\run_orchestrator.ps1 -DispatchAnalytics -AnalyticsLimit 40"
+Write-Host "  .\\run_orchestrator.ps1 -CheckPrereqs"
+Write-Host "  .\\run_orchestrator.ps1 -OrchestratorPreflight -CleanupStale"

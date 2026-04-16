@@ -10,13 +10,20 @@ namespace BallRunner.Ads
 
         private int failCount;
         private bool reviveConsumedThisRun;
+        private bool awaitingRewardedCoin;
+        private bool awaitingRewardedRevive;
 
         public event Action OnRewardedCoinGranted;
         public event Action OnReviveGranted;
+        public event Action OnInterstitialRequested;
+        public event Action OnRewardedCoinRequested;
+        public event Action OnRewardedReviveRequested;
 
         public void OnRunStart()
         {
             reviveConsumedThisRun = false;
+            awaitingRewardedCoin = false;
+            awaitingRewardedRevive = false;
         }
 
         public void OnRunFail()
@@ -36,7 +43,13 @@ namespace BallRunner.Ads
                 return;
             }
 
-            // TODO: Integrate SDK interstitial show call.
+            if (OnInterstitialRequested == null)
+            {
+                Debug.LogWarning("[Ads] Interstitial requested but no SDK bridge is subscribed.");
+                return;
+            }
+
+            OnInterstitialRequested.Invoke();
         }
 
         public void ShowRewardedDoubleCoin()
@@ -48,7 +61,19 @@ namespace BallRunner.Ads
                 return;
             }
 
-            // TODO: Integrate SDK rewarded callback.
+            if (awaitingRewardedCoin)
+            {
+                return;
+            }
+
+            if (OnRewardedCoinRequested == null)
+            {
+                Debug.LogWarning("[Ads] Rewarded coin requested but no SDK bridge is subscribed.");
+                return;
+            }
+
+            awaitingRewardedCoin = true;
+            OnRewardedCoinRequested.Invoke();
         }
 
         public bool CanUseReviveRewarded()
@@ -71,7 +96,50 @@ namespace BallRunner.Ads
                 return;
             }
 
-            // TODO: Integrate SDK revive rewarded callback.
+            if (awaitingRewardedRevive)
+            {
+                return;
+            }
+
+            if (OnRewardedReviveRequested == null)
+            {
+                Debug.LogWarning("[Ads] Rewarded revive requested but no SDK bridge is subscribed.");
+                return;
+            }
+
+            awaitingRewardedRevive = true;
+            OnRewardedReviveRequested.Invoke();
+        }
+
+        public void ResolveRewardedCoin(bool granted)
+        {
+            if (!awaitingRewardedCoin)
+            {
+                return;
+            }
+
+            awaitingRewardedCoin = false;
+            if (granted)
+            {
+                OnRewardedCoinGranted?.Invoke();
+            }
+        }
+
+        public void ResolveRewardedRevive(bool granted)
+        {
+            if (!awaitingRewardedRevive)
+            {
+                return;
+            }
+
+            awaitingRewardedRevive = false;
+            if (!granted || reviveConsumedThisRun)
+            {
+                return;
+            }
+
+            reviveConsumedThisRun = true;
+            OnReviveGranted?.Invoke();
         }
     }
 }

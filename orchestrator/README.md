@@ -29,8 +29,14 @@ cd C:\Users\akMuratNET\ai-game-orchestrator
 .\run_orchestrator.ps1 -CompleteTaskId TASK-001 -CompletionNote "core loop done"
 .\run_orchestrator.ps1 -Dispatch
 .\run_orchestrator.ps1 -Dispatch -ExecuteDispatch
+.\run_orchestrator.ps1 -Dispatch -ExecuteDispatch -UseDispatchProfile
 .\run_orchestrator.ps1 -HealthCheck
 .\run_orchestrator.ps1 -HealthCheck -CleanupStale
+.\run_orchestrator.ps1 -DispatchAnalytics -AnalyticsLimit 40
+.\run_orchestrator.ps1 -ExportCompactQueue -CompactLimit 30 -CompactIncludeAssigned
+.\run_orchestrator.ps1 -Cycle -CycleLimit 2 -DispatchTimeoutSec 90 -DispatchRetries 1 -AutoComplete
+.\run_orchestrator.ps1 -CheckPrereqs
+.\run_orchestrator.ps1 -OrchestratorPreflight -CleanupStale
 ```
 
 Python direkt:
@@ -43,6 +49,9 @@ python orchestrator.py complete --task-id TASK-001 --note "done"
 python dispatch.py
 python dispatch.py --execute
 python dispatch.py --execute --cleanup-stale --timeout-sec 120 --retries 2
+python dispatch.py --execute --use-owner-profile
+python analyze_dispatch_runs.py --limit 30
+python export_compact_queue.py --limit 25 --include-assigned
 ```
 
 ## Routing mantigi
