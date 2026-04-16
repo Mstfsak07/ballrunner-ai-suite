@@ -20,6 +20,8 @@ namespace BallRunner.Level
 
         private int currentLevelIndex;
         public event Action<int, int> OnLevelChanged;
+        public int CurrentLevelIndex => currentLevelIndex;
+        public int TotalLevelCount => levelCatalog != null ? levelCatalog.LevelCount : 0;
 
         private void Start()
         {

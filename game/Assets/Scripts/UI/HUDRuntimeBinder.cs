@@ -1,5 +1,6 @@
 using BallRunner.Core;
 using BallRunner.Economy;
+using BallRunner.Level;
 using UnityEngine;
 
 namespace BallRunner.UI
@@ -8,6 +9,7 @@ namespace BallRunner.UI
     {
         [SerializeField] private HUDController hud;
         [SerializeField] private CurrencyManager currencyManager;
+        [SerializeField] private GameplayBootstrapper gameplayBootstrapper;
         [SerializeField] private Transform playerRoot;
         [SerializeField] private Transform finishTransform;
 
@@ -36,6 +38,12 @@ namespace BallRunner.UI
             {
                 GameManager.Instance.OnRunResumed += ResetProgressOrigin;
             }
+
+            if (gameplayBootstrapper != null)
+            {
+                gameplayBootstrapper.OnLevelChanged += HandleLevelChanged;
+                HandleLevelChanged(gameplayBootstrapper.CurrentLevelIndex, gameplayBootstrapper.TotalLevelCount);
+            }
         }
 
         private void OnDestroy()
@@ -48,6 +56,11 @@ namespace BallRunner.UI
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.OnRunResumed -= ResetProgressOrigin;
+            }
+
+            if (gameplayBootstrapper != null)
+            {
+                gameplayBootstrapper.OnLevelChanged -= HandleLevelChanged;
             }
         }
 
@@ -96,6 +109,14 @@ namespace BallRunner.UI
             if (finishTransform != null && playerRoot != null)
             {
                 runTargetDistance = Mathf.Max(1f, finishTransform.position.z - runStartZ);
+            }
+        }
+
+        private void HandleLevelChanged(int levelIndex, int totalCount)
+        {
+            if (hud != null)
+            {
+                hud.SetLevel(levelIndex, totalCount);
             }
         }
     }

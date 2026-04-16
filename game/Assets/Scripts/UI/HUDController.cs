@@ -8,6 +8,7 @@ namespace BallRunner.UI
         [SerializeField] private Text ballCountText;
         [SerializeField] private Slider progressSlider;
         [SerializeField] private Text coinText;
+        [SerializeField] private Text levelText;
 
         public void SetBallCount(int count)
         {
@@ -31,6 +32,18 @@ namespace BallRunner.UI
             {
                 coinText.text = $"Coin: {amount}";
             }
+        }
+
+        public void SetLevel(int levelIndex, int totalLevelCount)
+        {
+            if (levelText == null)
+            {
+                return;
+            }
+
+            var safeTotal = Mathf.Max(1, totalLevelCount);
+            var displayLevel = Mathf.Clamp(levelIndex + 1, 1, safeTotal);
+            levelText.text = $"Level {displayLevel}/{safeTotal}";
         }
     }
 }

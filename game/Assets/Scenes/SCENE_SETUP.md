@@ -89,11 +89,38 @@ Unity icinde olusturulacak sahneler:
 
 ## Live HUD binding
 1. `HUDRuntimeBinder` ekle ve `HUDController`, `CurrencyManager`, `PlayerRoot`, `FinishTransform` bagla.
-2. Coin degisiminde HUD text'in anlik guncellendigini dogrula.
-3. Progress slider'in player->finish mesafesine gore arttigini dogrula.
-4. `ResultAdsBinder.hudRuntimeBinder` alanini baglayip rewarded/revive sonrasi `ForceRefresh`i dogrula.
+2. `HUDController` icindeki `levelText` referansini bagla.
+3. Coin degisiminde HUD text'in anlik guncellendigini dogrula.
+4. Progress slider'in player->finish mesafesine gore arttigini dogrula.
+5. Level gecisinde `Level X/Y` metninin guncellendigini dogrula.
+6. `ResultAdsBinder.hudRuntimeBinder` alanini baglayip rewarded/revive sonrasi `ForceRefresh`i dogrula.
 
 ## Tutorial hand
 1. Canvas altinda hand gostergesi object'i olustur.
 2. `TutorialHandController` ekleyip `handRoot` ve `PlayerMover` referanslarini bagla.
 3. Ilk dragde hand gizlenmeli ve sonraki runlarda tekrar acilmamali.
+
+## Debug reset tools
+1. Scene'e `DebugProgressTools` ekle (opsiyonel).
+2. Context menu'den level/tutorial/economy reset methodlarini test et.
+
+## Scene reference validation
+1. Scene'e `SceneReferenceValidator` ekle.
+2. Kritik sistem referanslarini inspector'da bagla.
+3. Play baslangicinda warning varsa eksik referanslari tamamla.
+
+## Debug hotkeys (play mode)
+1. Scene'e `DebugHotkeys` ekle.
+2. `GameplayBootstrapper`, `DebugProgressTools`, `AdsManager` referanslarini bagla.
+3. Kisa yollar:
+   - `F5`: Replay current level
+   - `F6`: Reset all progress
+   - `F7`: Simulate fail
+   - `F8`: Simulate win
+   - `F9`: Trigger rewarded x2
+   - `F10`: Trigger rewarded revive
+
+## Build metadata
+1. `BuildMetadata` ScriptableObject olustur.
+2. `BuildMetadataLogger` componentini boot veya menu root'a ekleyip metadata referansini bagla.
+3. Internal test oncesi metadata assetinde timestamp stamp et.

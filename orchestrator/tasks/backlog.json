@@ -1,6 +1,6 @@
 {
   "project": "Ball Runner Hybrid Casual",
-  "last_updated": "2026-04-16 21:14:52",
+  "last_updated": "2026-04-16 22:12:33",
   "tasks": [
     {
       "id": "P0-T001",
@@ -477,6 +477,444 @@
       "selection_reason": "analysis and planning workload",
       "completed_at": "2026-04-16 21:14:52",
       "completion_note": "Claude partial output captured from dispatch log; regression checklist finalized locally"
+    },
+    {
+      "id": "P8-T001",
+      "phase": "Phase 8",
+      "title": "HUD'a aktif level bilgisini bagla",
+      "description": "Level index eventi ile HUD'da Level X/Y metnini canli goster",
+      "priority": 26,
+      "tags": [
+        "implement",
+        "ui",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:45:34",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:46:32",
+      "completion_note": "HUD level display integrated via GameplayBootstrapper level-change event"
+    },
+    {
+      "id": "P8-T002",
+      "phase": "Phase 8",
+      "title": "Debug reset araclari ekle",
+      "description": "Level/economy/tutorial save keyleri icin reset helper methodlari ekle",
+      "priority": 27,
+      "tags": [
+        "implement",
+        "core",
+        "code"
+      ],
+      "status": "completed",
+      "completed_at": "2026-04-16 21:46:33",
+      "completion_note": "DebugProgressTools added for level/tutorial/economy reset helpers"
+    },
+    {
+      "id": "P8-T003",
+      "phase": "Phase 8",
+      "title": "Phase 8 kurulum notu ekle",
+      "description": "Level HUD ve debug reset baglantisi icin kisa setup adimlari",
+      "priority": 28,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 21:46:33",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 21:48:15",
+      "completion_note": "Claude partial output captured from log; phase 8 setup notes finalized locally"
+    },
+    {
+      "id": "P9-T001",
+      "phase": "Phase 9",
+      "title": "Scene reference validator ekle",
+      "description": "Kritik component referanslarini runtime startup'ta kontrol edip eksikleri logla",
+      "priority": 29,
+      "tags": [
+        "implement",
+        "core",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:49:01",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:49:32",
+      "completion_note": "SceneReferenceValidator added to verify critical startup references and report missing links"
+    },
+    {
+      "id": "P9-T002",
+      "phase": "Phase 9",
+      "title": "Debug hotkey test araci ekle",
+      "description": "Editor play mode icin replay/reset/next-level gibi hizli test kisa yollari",
+      "priority": 30,
+      "tags": [
+        "implement",
+        "code",
+        "ui"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:49:32",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:50:01",
+      "completion_note": "DebugHotkeys added for replay/reset/fail/win/rewarded test shortcuts"
+    },
+    {
+      "id": "P9-T003",
+      "phase": "Phase 9",
+      "title": "Phase 9 wiring kontrol notu yaz",
+      "description": "Validator ve hotkey araclarinin kurulum/usage notlarini dokumante et",
+      "priority": 31,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 21:50:01",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 21:52:00",
+      "completion_note": "Claude partial timeout output captured; phase 9 wiring notes finalized locally"
+    },
+    {
+      "id": "P10-T001",
+      "phase": "Phase 10",
+      "title": "Internal test hazirlik scripti ekle",
+      "description": "Release notu olusturma ve temel dosya kontrolleri yapan otomasyon scripti",
+      "priority": 32,
+      "tags": [
+        "implement",
+        "automation",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:53:06",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:53:55",
+      "completion_note": "Added prepare_internal_test.ps1 and generated RELEASE_NOTES.md from backlog"
+    },
+    {
+      "id": "P10-T002",
+      "phase": "Phase 10",
+      "title": "Build metadata modeli ekle",
+      "description": "Versiyon ve build zaman bilgisini tutan runtime metadata yapisi",
+      "priority": 33,
+      "tags": [
+        "implement",
+        "core",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:53:55",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:53:56",
+      "completion_note": "Added BuildMetadata ScriptableObject and BuildMetadataLogger"
+    },
+    {
+      "id": "P10-T003",
+      "phase": "Phase 10",
+      "title": "Release notes generator baglantisi",
+      "description": "Backlog completed tasklarindan release notes markdown cikarimi",
+      "priority": 34,
+      "tags": [
+        "implement",
+        "automation",
+        "analysis"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 21:53:56",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 21:53:56",
+      "completion_note": "Release notes generation now tied to orchestrator backlog completed tasks"
+    },
+    {
+      "id": "P11-T001",
+      "phase": "Phase 11",
+      "title": "Release manifest generator ekle",
+      "description": "Proje dosya hashleri ile release manifest json ureten script",
+      "priority": 35,
+      "tags": [
+        "implement",
+        "automation",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:08:24",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 22:08:44",
+      "completion_note": "Added release manifest generator and produced RELEASE_MANIFEST.json"
+    },
+    {
+      "id": "P11-T002",
+      "phase": "Phase 11",
+      "title": "Internal readiness verify scripti ekle",
+      "description": "Critical dosya ve config kontrollerini otomatik dogrulayan script",
+      "priority": 36,
+      "tags": [
+        "implement",
+        "automation",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-opus-4-6",
+      "assigned_at": "2026-04-16 22:08:44",
+      "selection_reason": "deep architecture / critical complexity",
+      "completed_at": "2026-04-16 22:09:04",
+      "completion_note": "Added verify_internal_readiness.ps1 and validated readiness in strict mode"
+    },
+    {
+      "id": "P11-T003",
+      "phase": "Phase 11",
+      "title": "Ops handoff notu ekle",
+      "description": "Release teslimi icin kisa operasyon handoff dokumani",
+      "priority": 37,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:09:05",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:09:14",
+      "completion_note": "Created OPS_HANDOFF.md for release operations"
+    },
+    {
+      "id": "P12-T001",
+      "phase": "Phase 12",
+      "title": "Release snapshot exporter ekle",
+      "description": "Release icin secili artifactlari tarihli klasore kopyalayan script",
+      "priority": 38,
+      "tags": [
+        "implement",
+        "automation",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:09:27",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 22:09:43",
+      "completion_note": "Added export_release_snapshot.ps1 and created first snapshot"
+    },
+    {
+      "id": "P12-T002",
+      "phase": "Phase 12",
+      "title": "Version bump helper ekle",
+      "description": "BuildMetadata ve release notes version alanlarini tek komutla guncelleyen script",
+      "priority": 39,
+      "tags": [
+        "implement",
+        "automation",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:09:44",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 22:10:22",
+      "completion_note": "Added bump_version.ps1 and applied version 0.1.1-internal (2)"
+    },
+    {
+      "id": "P12-T003",
+      "phase": "Phase 12",
+      "title": "Phase 12 usage note ekle",
+      "description": "Snapshot ve version helper scriptlerinin kullanimini belgele",
+      "priority": 40,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:10:23",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:10:23",
+      "completion_note": "Added PHASE12_USAGE_NOTES.md for snapshot/version helper usage"
+    },
+    {
+      "id": "P13-T001",
+      "phase": "Phase 13",
+      "title": "Artifact clean scripti ekle",
+      "description": "release-snapshots klasorunde eski snapshotlari temizleyen script",
+      "priority": 41,
+      "tags": [
+        "implement",
+        "automation",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:10:34",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 22:10:48",
+      "completion_note": "Added clean_release_snapshots.ps1 with keep-latest retention"
+    },
+    {
+      "id": "P13-T002",
+      "phase": "Phase 13",
+      "title": "Daily ops report generator ekle",
+      "description": "temel release/artifact/ready durumunu markdown rapora doken script",
+      "priority": 42,
+      "tags": [
+        "implement",
+        "automation",
+        "analysis"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:10:49",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:11:08",
+      "completion_note": "Added generate_ops_daily_report.ps1 and generated OPS_DAILY_REPORT.md"
+    },
+    {
+      "id": "P13-T003",
+      "phase": "Phase 13",
+      "title": "Phase 13 runbook notu ekle",
+      "description": "clean + report scriptlerinin operasyon kullanim notu",
+      "priority": 43,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:11:08",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:11:19",
+      "completion_note": "Added PHASE13_RUNBOOK.md"
+    },
+    {
+      "id": "P14-T001",
+      "phase": "Phase 14",
+      "title": "Preflight pipeline scripti ekle",
+      "description": "version bump + readiness + manifest + report + snapshot islemlerini tek komutta zincirle",
+      "priority": 44,
+      "tags": [
+        "implement",
+        "automation",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:11:29",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 22:11:51",
+      "completion_note": "Added run_preflight.ps1 pipeline and executed for version 0.1.2-internal (3)"
+    },
+    {
+      "id": "P14-T002",
+      "phase": "Phase 14",
+      "title": "Preflight sonuc ozet dosyasi uret",
+      "description": "pipeline sonuclarini markdown ozet dosyasina yaz",
+      "priority": 45,
+      "tags": [
+        "implement",
+        "automation",
+        "analysis"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:11:52",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:12:10",
+      "completion_note": "Added generate_preflight_artifact_summary.ps1 and generated PREFLIGHT_ARTIFACT_SUMMARY.md"
+    },
+    {
+      "id": "P14-T003",
+      "phase": "Phase 14",
+      "title": "Phase 14 handoff notu ekle",
+      "description": "preflight pipeline kullanim ve hata giderme notu",
+      "priority": 46,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 22:12:10",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 22:12:17",
+      "completion_note": "Added PHASE14_HANDOFF.md for preflight pipeline operations"
+    },
+    {
+      "id": "P15-T001",
+      "phase": "Phase 15",
+      "title": "Suite sync scripti ekle",
+      "description": "BallRunnerHybrid ve ai-game-orchestrator icerigini ballrunner-ai-suite repo altina senkronla",
+      "priority": 47,
+      "tags": [
+        "implement",
+        "automation",
+        "integration"
+      ],
+      "status": "assigned",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 22:12:33",
+      "selection_reason": "implementation heavy and deterministic execution"
+    },
+    {
+      "id": "P15-T002",
+      "phase": "Phase 15",
+      "title": "Suite pre-commit check scripti ekle",
+      "description": "suite repo icin status/branch/remote hizli kontrol scripti",
+      "priority": 48,
+      "tags": [
+        "implement",
+        "automation",
+        "code"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P15-T003",
+      "phase": "Phase 15",
+      "title": "Phase 15 usage note ekle",
+      "description": "suite sync ve pre-commit kontrollerinin kullanim notu",
+      "priority": 49,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "pending"
     }
   ]
 }

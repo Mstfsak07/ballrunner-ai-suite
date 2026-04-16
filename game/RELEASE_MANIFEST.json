@@ -1,0 +1,295 @@
+{
+  "generated_utc": "2026-04-16T19:11:45Z",
+  "project": "BallRunnerHybrid",
+  "file_count": 48,
+  "files": [
+    {
+      "path": "Assets\\Scenes\\SCENE_SETUP.md",
+      "size": 5514,
+      "sha256": "888624bf5d593f6a371fc2f7243b5bd68701973e92882a1d265e9863e4615453",
+      "modified_utc": "2026-04-16T18:53:46Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Ads\\AdsManager.cs",
+      "size": 1866,
+      "sha256": "8a5ba3351a407adc6b5bcc67a4d648e1f01ea5f8543ab3a261afeae663c9d1cd",
+      "modified_utc": "2026-04-16T15:26:10Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Balls\\BallGroupController.cs",
+      "size": 4205,
+      "sha256": "7e3dc94b01535f5dab7e964b389edc5a9438f1b9198a578fd6d7e9ec19719299",
+      "modified_utc": "2026-04-16T15:23:49Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Balls\\BallPool.cs",
+      "size": 1343,
+      "sha256": "5dea481156f1698811193ba0be26c2a7f6e5ec2626dca35e11b792da8b8020e9",
+      "modified_utc": "2026-04-16T15:23:41Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Balls\\BallUnit.cs",
+      "size": 379,
+      "sha256": "7cc1edb84f76424367a197f423638e2fb6cc30042e794a3714b5cb586c044c71",
+      "modified_utc": "2026-04-16T15:13:29Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\BootLoader.cs",
+      "size": 317,
+      "sha256": "33b57f4a92324d31cdbd36ef9ae5b5f498533c4144a7def4af78c1d0a86a910c",
+      "modified_utc": "2026-04-16T15:11:15Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\BuildMetadata.cs",
+      "size": 964,
+      "sha256": "67771abc09aa14bb07a196eec07eaf1fed24fc237b648f4e48cc616fae99d4af",
+      "modified_utc": "2026-04-16T19:11:45Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\BuildMetadataLogger.cs",
+      "size": 460,
+      "sha256": "6e83631a855e0a767b8e13a63a27bda72e25bbc4ab6bbb1d8ec37372814cee7b",
+      "modified_utc": "2026-04-16T18:53:40Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\DebugHotkeys.cs",
+      "size": 1806,
+      "sha256": "802628ef73d1ac8f727ba03c13ad700a3cac38063a2f37e3545cf6b00992b093",
+      "modified_utc": "2026-04-16T18:49:47Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\DebugProgressTools.cs",
+      "size": 1414,
+      "sha256": "9ce690678d842d7e7f19c70ec99bd5b2b3736fa5f315f0bf8062103768d151fa",
+      "modified_utc": "2026-04-16T18:46:18Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\EconomyConfig.cs",
+      "size": 1313,
+      "sha256": "af62f9d1c6e16fd9ba349d74e467b3612f2c640c78fae43a044f5a8f33843d50",
+      "modified_utc": "2026-04-16T15:11:50Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\GameConfig.cs",
+      "size": 865,
+      "sha256": "99473f57d5991d2bd94faa721411627be034edc1aea50dfdf610a51a045d5ea7",
+      "modified_utc": "2026-04-16T15:11:15Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\GameManager.cs",
+      "size": 2755,
+      "sha256": "727e71c17db8068a1b5107dcb2203cbcf360a076bbcaa92479fc269041a3e910",
+      "modified_utc": "2026-04-16T18:00:19Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\GameState.cs",
+      "size": 219,
+      "sha256": "174bc389ad01d8a05ed04b24108653b8117a3469b2fedb11c3389af1dad957d2",
+      "modified_utc": "2026-04-16T15:11:15Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\GameStateController.cs",
+      "size": 746,
+      "sha256": "462720da4eede3d62b71bbfe66c83a4e0a9026c6e72d65f7d4d4d62f3c0537be",
+      "modified_utc": "2026-04-16T15:11:15Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\RuntimeConfigInstaller.cs",
+      "size": 825,
+      "sha256": "df37b00ccb208690a528bfebc82ab0684dd73f7c4273a93dc1bc4bc78c5a4628",
+      "modified_utc": "2026-04-16T15:11:50Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\SceneIds.cs",
+      "size": 221,
+      "sha256": "316332bc7230e3eabe95c6438a80badcc54cf73eb8dc9512573ea223170d1a2f",
+      "modified_utc": "2026-04-16T15:11:15Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\SceneReferenceValidator.cs",
+      "size": 3089,
+      "sha256": "aa73137c96fc36410ecb9f80ebc4e2f0e0d1a215b2901130b5d7e5982ca8d4ca",
+      "modified_utc": "2026-04-16T18:49:19Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Data\\LevelData.cs",
+      "size": 1366,
+      "sha256": "7b986ae381644d455824bfd500b238c2f9c077458d34119616c8e834a2e32cfe",
+      "modified_utc": "2026-04-16T15:21:38Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Economy\\CurrencyManager.cs",
+      "size": 1090,
+      "sha256": "1bf1bab5d03e42396317869f0257e1fb63690682a53e61792431a358aac0728f",
+      "modified_utc": "2026-04-16T18:01:14Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Economy\\PlayerProgressData.cs",
+      "size": 219,
+      "sha256": "64d6827c916412743f901556d7adfa422a48e75d2393bb31b8d4726f2d9cd4a3",
+      "modified_utc": "2026-04-16T15:23:07Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Economy\\RunResultService.cs",
+      "size": 1051,
+      "sha256": "d2dbd6887a375b5eaab4be53e680ae67a36a03d10d511afe075550d1ae4721a0",
+      "modified_utc": "2026-04-16T15:23:16Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Economy\\SaveManager.cs",
+      "size": 787,
+      "sha256": "d7b7371dabd14aadcce23c41858c336b6e185e1a31221c8bbf56183ad3f8af4c",
+      "modified_utc": "2026-04-16T15:23:07Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Economy\\UpgradeManager.cs",
+      "size": 2367,
+      "sha256": "37afeef807f467c898b891fe99717918b2a31b9692c59662ffbdadbf394ed850",
+      "modified_utc": "2026-04-16T15:23:07Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gates\\AddGate.cs",
+      "size": 298,
+      "sha256": "40f48cec028d9436bb45dd7ab3def64a6ecaff721885eb6cfcf2c3881fecd167",
+      "modified_utc": "2026-04-16T15:13:57Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gates\\GateBase.cs",
+      "size": 1099,
+      "sha256": "4865117c21adde3e6fcb423d1b1d18e0b5a5b978b1aa213ce0460022ab8c5ce8",
+      "modified_utc": "2026-04-16T15:56:52Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gates\\MultiplyGate.cs",
+      "size": 580,
+      "sha256": "85e31b86ddc5ca1a90d21bffd603e4d45785ca34d386fd43bc25c834efe7b629",
+      "modified_utc": "2026-04-16T15:56:57Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gates\\SubtractGate.cs",
+      "size": 304,
+      "sha256": "1250f56caad3e2b5f322a870acf4c16cfc8fdbada6384c8b38baf66405ed602f",
+      "modified_utc": "2026-04-16T15:13:57Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Level\\FinishZone.cs",
+      "size": 740,
+      "sha256": "47c8c5775fb9b8d92c8be46db3cbcbbc5f1a560252ef78a41edd5765e57f2e78",
+      "modified_utc": "2026-04-16T15:14:54Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Level\\GameplayBootstrapper.cs",
+      "size": 3584,
+      "sha256": "6f784d06811677745bcbbb279885ca57fa4d789431cd65ff1e344517e20b5c25",
+      "modified_utc": "2026-04-16T18:46:02Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Level\\LevelCatalog.cs",
+      "size": 553,
+      "sha256": "6dafb0940d2473d8511ed0ace27302410f8d45c3b1a30226ee1d47b0025c0ea2",
+      "modified_utc": "2026-04-16T15:21:38Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Level\\LevelRuntimeBuilder.cs",
+      "size": 4470,
+      "sha256": "80e2af87124ab34d65497e61ba940ee3fe26fffc075e057b5d571c17216b6a15",
+      "modified_utc": "2026-04-16T15:57:30Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Obstacles\\DamageWallObstacle.cs",
+      "size": 728,
+      "sha256": "ec3e442be11aab6236a446ab13cd7931de5c956045e3b21ec3616ab359c7b420",
+      "modified_utc": "2026-04-16T15:14:29Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Obstacles\\ObstacleBase.cs",
+      "size": 601,
+      "sha256": "41e3ccb6acb4b725c01251e25d977a9d405a82d429a897dbdfbb998beda52057",
+      "modified_utc": "2026-04-16T15:57:03Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Obstacles\\SpinBarObstacle.cs",
+      "size": 464,
+      "sha256": "5469086c35550b52dab6c87cc45dfc3ac58b0ab317d2c83ce60dcb5e4fc43415",
+      "modified_utc": "2026-04-16T15:14:29Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Player\\FollowTargetCamera.cs",
+      "size": 605,
+      "sha256": "c4566542fa29200f4f337a47ac0671329188fe2e28481709f6de740bb84d4871",
+      "modified_utc": "2026-04-16T15:12:59Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Player\\PlayerMover.cs",
+      "size": 3752,
+      "sha256": "1760bdfadfa5a4068b7402d546714e33d12c11227ec35430e411510e2cb76b58",
+      "modified_utc": "2026-04-16T18:12:22Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\AdsGameEventsBridge.cs",
+      "size": 896,
+      "sha256": "7569977465f3e09eb48af3de2517dec96f0e09bc2c70a131f536c65d736766c2",
+      "modified_utc": "2026-04-16T15:26:18Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\GameplayUIBinder.cs",
+      "size": 1704,
+      "sha256": "e70b8f9b346bbe91890e94c4291cf061b0cff99182ae994e220f8e2b18b40dfb",
+      "modified_utc": "2026-04-16T18:00:26Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\HUDController.cs",
+      "size": 1283,
+      "sha256": "bf4bb2c01c2821ccc00e1e934390ac70c38dd28499c599fa6bcdb253fda4626d",
+      "modified_utc": "2026-04-16T18:45:45Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\HUDRuntimeBinder.cs",
+      "size": 3440,
+      "sha256": "1b781c69fe1924e2d1fc9d805d215369324f69f50c25a0094b569e8e7aeae31a",
+      "modified_utc": "2026-04-16T18:46:08Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\ResultAdsBinder.cs",
+      "size": 1555,
+      "sha256": "b55a7483188328abcdf39fdde26f69008ba8add2ddd8617279ded914f56d7292",
+      "modified_utc": "2026-04-16T18:05:56Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\ResultPanel.cs",
+      "size": 3891,
+      "sha256": "f5a8b31f38fa8f2e08e087293086891d2c6cded925d1aa439dbd25167ddd6c6e",
+      "modified_utc": "2026-04-16T18:05:33Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\TutorialHandController.cs",
+      "size": 1286,
+      "sha256": "32cc0d45bcefaef2de0cacda752a19e6d10813c2a911ff5ab1879899071e8398",
+      "modified_utc": "2026-04-16T18:12:32Z"
+    },
+    {
+      "path": "LAUNCH_CHECKLIST.md",
+      "size": 1507,
+      "sha256": "685005f65302c61464b6072d8591c7124c302e3cdaffce1fe3cb3d5fa9b60ae2",
+      "modified_utc": "2026-04-16T15:26:42Z"
+    },
+    {
+      "path": "PHASE7_REGRESSION_CHECKLIST.md",
+      "size": 1744,
+      "sha256": "8b0572ce2dbeb1a59f8dc998d11cafe104a8d2cae692c137580aed4b762fdf9f",
+      "modified_utc": "2026-04-16T18:14:52Z"
+    },
+    {
+      "path": "PHASE9_WIRING_NOTES.md",
+      "size": 1811,
+      "sha256": "d828f166ad821fd463b1d7f1f66cbc3eed2628e4b154707f283a42ee55f430b3",
+      "modified_utc": "2026-04-16T18:52:00Z"
+    },
+    {
+      "path": "RELEASE_NOTES.md",
+      "size": 1783,
+      "sha256": "4b2087a99b911c38960fe6b62b40210e3d04ddde8acbe05a77fc21c74b3a7e2a",
+      "modified_utc": "2026-04-16T19:11:45Z"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 # Session State
 
-Last updated: 2026-04-16 21:14:52
+Last updated: 2026-04-16 22:12:33
 Orchestrator: codex
 Project: Ball Runner Hybrid Casual
 
 ## Active Task
-- id: none
-- owner: none
-- model: none
-- status: idle
+- id: P15-T001
+- owner: codex
+- model: gpt-5.3-codex
+- status: assigned
 
 ## Completed Tasks
 - P0-T001: Unity project skeleton ve scene bootstrap kur
@@ -36,6 +36,27 @@ Project: Ball Runner Hybrid Casual
 - P7-T001: Level progress loop ve reset kontrolu ekle
 - P7-T002: Tutorial hand ilk dragde gizlenme akisini ekle
 - P7-T003: Phase 7 regression checklist dokumani ekle
+- P8-T001: HUD'a aktif level bilgisini bagla
+- P8-T002: Debug reset araclari ekle
+- P8-T003: Phase 8 kurulum notu ekle
+- P9-T001: Scene reference validator ekle
+- P9-T002: Debug hotkey test araci ekle
+- P9-T003: Phase 9 wiring kontrol notu yaz
+- P10-T001: Internal test hazirlik scripti ekle
+- P10-T002: Build metadata modeli ekle
+- P10-T003: Release notes generator baglantisi
+- P11-T001: Release manifest generator ekle
+- P11-T002: Internal readiness verify scripti ekle
+- P11-T003: Ops handoff notu ekle
+- P12-T001: Release snapshot exporter ekle
+- P12-T002: Version bump helper ekle
+- P12-T003: Phase 12 usage note ekle
+- P13-T001: Artifact clean scripti ekle
+- P13-T002: Daily ops report generator ekle
+- P13-T003: Phase 13 runbook notu ekle
+- P14-T001: Preflight pipeline scripti ekle
+- P14-T002: Preflight sonuc ozet dosyasi uret
+- P14-T003: Phase 14 handoff notu ekle
 
 ## Open Questions
 - none
