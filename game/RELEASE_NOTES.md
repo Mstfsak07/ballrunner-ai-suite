@@ -1,8 +1,8 @@
-# Internal Test Release Notes
+﻿# Internal Test Release Notes
 
 Date: 2026-04-16 21:53:25
-VersionName: 0.1.2-internal
-VersionCode: 3
+VersionName: 0.1.3-internal
+VersionCode: 4
 Project: Ball Runner Hybrid Casual
 
 ## Completed Tasks
@@ -37,5 +37,6 @@ Project: Ball Runner Hybrid Casual
 - [P9-T001] Scene reference validator ekle
 - [P9-T002] Debug hotkey test araci ekle
 - [P9-T003] Phase 9 wiring kontrol notu yaz
+
 
 

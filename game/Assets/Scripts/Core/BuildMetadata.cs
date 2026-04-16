@@ -1,12 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace BallRunner.Core
 {
     [CreateAssetMenu(fileName = "BuildMetadata", menuName = "BallRunner/Config/Build Metadata")]
     public sealed class BuildMetadata : ScriptableObject
     {
-        [SerializeField] private string versionName = "0.1.2-internal";
-        [SerializeField] private int versionCode = 3;
+        [SerializeField] private string versionName = "0.1.3-internal";
+        [SerializeField] private int versionCode = 4;
         [SerializeField] private string channel = "internal";
         [SerializeField] private string buildTimestampUtc = "";
 
@@ -25,5 +25,6 @@ namespace BallRunner.Core
         }
     }
 }
+
 
 
