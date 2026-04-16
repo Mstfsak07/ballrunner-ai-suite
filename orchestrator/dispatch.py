@@ -13,6 +13,7 @@ RUNS = ROOT / "runs"
 
 
 def parse_handoff(text: str) -> dict:
+    text = text.replace("\ufeff", "")
     def pick(label: str) -> str:
         m = re.search(rf"^{label}:\s*(.+)$", text, re.MULTILINE)
         return m.group(1).strip() if m else ""
@@ -26,7 +27,7 @@ def parse_handoff(text: str) -> dict:
 
 
 def shell_quote(text: str) -> str:
-    return text.replace("\"", "\\\"")
+    return text.replace("\ufeff", "").replace("\"", "\\\"")
 
 
 def cleanup_stale_node_processes() -> None:
@@ -125,7 +126,8 @@ def main() -> None:
     print(f"Task: {data['task']}")
     print(f"Owner: {data['owner']}")
     print(f"Model: {data['model']}")
-    print(f"Command: {command}")
+    safe_command = command.encode("cp1254", errors="replace").decode("cp1254")
+    print(f"Command: {safe_command}")
 
     if not args.execute:
         print("Dry run only. Use --execute to run.")
