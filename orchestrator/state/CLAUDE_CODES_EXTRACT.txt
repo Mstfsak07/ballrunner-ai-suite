@@ -1,0 +1,239 @@
+Claude Gizli Kodları
+ Kategorilere göre düzenlenmiş 100 prompt kısayolu
+ Siyah-beyaz temiz baskı
+ Temel Yazım & Stil | Eserler & Oluşturma | Düşünme & Akıl Yürütme | Öğrenme & Ustalık | Analiz &
+ Strateji
+ Yaratıcılık & İçerik | Kodlama & Teknik | Araştırma & Derinlemesine İnceleme | Güç Komutları | Gizli
+ Modlar
+ Aşağıdaki her kod, belirli bir modu, formatı veya akıl yürütme kalıbını zorlayarak Claude’un
+ yanıt verme biçimini değiştirir.
+
+
+Temel Yazım & Stil
+/ghost
+Metni yeniden yazar; yapı zeka tarafından yazıldığını anlamak imkânsız hâle gelir.
+/mirror
+Verdiğiniz örnekten hareketle tam olarak sizin yazım tarzınıza uyum sağlar.
+/raw
+Tüm biçimlendirmeyi kaldırır ve temiz, sade bir yanıt sunar.
+/voice
+Belirli bir tonu kilitler ve konuşma boyunca aynı tonu korur.
+/punch
+Her cümleyi daha sert ve doğrudan bir hale getirir.
+/flow
+Metni baştan sona daha akıcı okunacak şekilde yeniden düzenler.
+/trim
+Anlam kaybı olmaksızın gereksiz dolgu ifadeleri temizler.
+/hook
+Açılış cümlesini anında dikkat çekecek biçimde yeniden yazar.
+/rephrase
+Aynı şeyi tamamen farklı bir şekilde ifade eder.
+/polish
+Ham metni anlamını değiştirmeden profesyonel bir görünüme kavuşturur.
+
+
+Eserler & Oluşturma
+ARTIFACTS
+Hemen kullanabileceğiniz eksiksiz, etkileşimli bir proje oluşturur.
+/buildme
+Bir açıklamadan tam anlamıyla çalışan bir uygulama ya da araç üretir.
+DASHBOARD
+Etkileşimli, canlı bir veri panosu oluşturur.
+PROTOTYPE
+Yalnızca bir fikirden yola çıkarak çalışan bir prototip üretir.
+CANVAS
+Düzen ve şema tasarlamak için görsel bir çalışma alanı açar.
+/render
+Bir açıklamayı sohbet içinde görsel çıktıya dönüştürür.
+BLUEPRINT
+Dosya ve yapıyı içeren eksiksiz bir proje planı oluşturur.
+WIREFRAME
+Bir web sitesi ya da uygulama ekranı için temel bir düzen tasarlar.
+/livecode
+Gerçek zamanlı olarak kod yazar ve çalıştırır; sonucu anında görürsünüz.
+GENERATOR
+İstek üzerine çıktı üreten yeniden kullanılabilir bir araç inşa eder.
+
+
+Düşünme & Akıl Yürütme
+OODA
+Bir durumu gözlemle, yönlendir, karar ver ve harekete geç adımlarıyla analiz eder.
+/deepthink
+Yanıt vermeden önce Claude’u her katmanı derinlemesine düşünmeye zorlar.
+L99
+Yanıtı mümkün olan en yüksek derinlik düzeyine taşır.
+CHAINLOGIC
+Her akıl yürütme adımını takip edebilmeniz için adım adım açıklar.
+/blindspots
+Sormayı düşünemediğiniz, gözden kaçırdığınız noktaları bulur.
+OVERTHINK
+Başkalarının gözden kaçırdığı ayrıntıları yakalamak için kasıtlı olarak aşırı analiz yapar.
+/unpack
+Karmaşık bir fikri onu oluşturan her parçaya ayırır.
+INVERT
+Sorunu tamamen tersinden düşünerek çözer.
+/layered
+Yanıtı yüzeysel, orta ve uzman düzeyinde olmak üzere üç katmanda sunar.
+XRAY
+Bariz yanıtın ötesine geçerek gerçekte neler olduğunu ortaya çıkarır.
+
+
+Öğrenme & Ustalık
+/teachme
+Yanıtı salt bir cevap yerine tam bir ders formatına dönüştürür.
+GAPFINDER
+Bir konu hakkında tam olarak neyi bilmediğinizi tespit eder.
+/eli5
+O kadar basit açıklar ki beş yaşında bir çocuk bile anlayabilir.
+MASTERCLASS
+Konuyu dünya standartlarında bir uzman gibi öğretir.
+/drill
+Gerçekten öğrenmenizi sağlamak için alıştırma egzersizleri oluşturur.
+SPEEDRUN
+Bir konuyu anlamak için mümkün olan en hızlı yolu öğretir.
+/mentor
+Durumunuzu bilen kişisel bir mentor gibi tavsiye verir.
+LEVELUP
+Mevcut seviyenizi belirler ve bir üst seviyeyi öğretir.
+CRASHCOURSE
+Bilmeniz gereken her şeyi beş dakikada özetler.
+BOOTCAMP
+Başlangıçtan ileri düzeye kadar eksiksiz bir öğrenme planı oluşturur.
+
+
+Analiz & Strateji
+/redteam
+Fikrinizi parçalara ayırarak her zayıf noktasını ortaya çıkarır.
+PARETO
+Sonuçların %80’ini yaratan %20’lik eylemleri bulur.
+/swot
+Güçlü yönler, zayıf yönler, fırsatlar ve tehditler analizini tam olarak yapar.
+WARGAME
+Rakiplerin ya da karşı tarafın nasıl tepki vereceğini simüle eder.
+/premortem
+Planınızın zaten başarısız olduğunu varsayarak nedenini araştırır.
+LEVERAGE
+Her şeyi değiştirecek tek bir hareketi bulur.
+/audit
+Çalışmanızı inceler ve tespit ettiği her sorunu işaretler.
+BOTTLENECK
+Her şeyi yavaşlatan tek noktasını tespit eder.
+/scenario
+Her birine hazırlanabilmeniz için birden fazla olası geleceği canlandırır.
+BLINDSPOT
+Henüz göz önünde bulundurmadığınız riskleri ve açıları gün yüzeyi çıkarır.
+
+
+Yaratıcılık & İçerik
+/viral
+İçeriği paylaşılmaya optimize edilecek şekilde yeniden yazar.
+HOOKS10
+Herhangi bir konu için on farklı açılış kançası üretir.
+/storysell
+Sıkıcı bir mesajı insanların okumak isteyeceği bir hikâyeye dönüştürür.
+REMIX
+Birbiriyle ilgisiz iki fikri alır ve yeni bir şey ortaya çıkarır.
+/angles
+Tek bir konuya yaklaşmanın on tamamen farklı yolunu sunar.
+CLIFFHANGER
+İnsanları devamı için sabrırsızlandıracak bir son yazar.
+/captionme
+Gerçekten etkileşim kazanan sosyal medya altyazıları yazar.
+POLARIZE
+Görüşünüzü insanların tepki vermek zorunda kalacağı kadar cesur bir hâle getirir.
+/banger
+Sıradan bir satırı insanların ekran görüntüsünü alacağı bir hâle dönüştürür.
+THUMBNAIL
+Tıklanmaya tasarınmış bir başlık ya da manşet yazar.
+
+
+Kodlama & Teknik
+/debug
+Kodunuzdaki hatasını bulur ve neyin yanlış gittiğini açıklar.
+REFACTOR
+Yaptığı işi değiştirmeden dağınık kodu temizler.
+/shipit
+Ham kodu üretime hazır hale getirir.
+ARCHITECT
+Herhangi bir kod yazmadan önce tam sistem yapısını tasarlar.
+/convert
+Kodu bir dilden başka bir dile yeniden yazar.
+AUTOMATE
+Manuel bir süreci kendi başına çalışan bir betik haline getirir.
+/testit
+Kodunuzun gerçekten çalıştığını doğrulamak için testler yazar.
+SCAFFOLD
+Yeni bir proje için tüm dosya yapısını kurar.
+/optimize
+Hiçbir şeyi bozmadan kodu daha hızlı hale getirir.
+APIBUILD
+Düz bir İngilizce açıklamadan eksiksiz bir API oluşturur.
+
+
+Araştırma & Derinlemesine İnceleme
+/deepdive
+Herhangi bir konuda yüzeyin çok ötesine geçer.
+FACTCHECK
+İddialuları doğrular ve hatalı olabilecekleri işaretler.
+/sources
+Her ifadeyi bilginin kaynağıyla birlikte destekler.
+COMPARE
+İki ya da daha fazla seçeneği net bir kazananla birlikte karşılaştırır.
+/investigate
+Bir konuyu haber peşindeki bir gazeteci gibi araştırır.
+TRENDSCAN
+Herhangi bir alanda şu anda neler olduğunu tespit eder.
+/extract
+Uzun bir belgeden tam olarak ihtiyaç duyduğunuz bilgiyi çeker.
+TIMELINE
+Bir konunun tüm geçmişini kronolojik sırayla haritalandırır.
+/digest
+Her şeyi okur ve yalnızca önemli olanı sunar.
+DOSSIER
+Herhangi bir konu, kişi ya da şirket hakkında tam bir brifing dosyası hazırlar.
+
+
+Güç Komutları
+/godmode
+Mümkün olan en ayrıntılı ve kapsamlı yanıtın kilidini açar.
+/autoprompt
+Ham fikrinizi alır ve bunun için mükemmel prompt’u oluşturur.
+MEGAPROMPT
+Tam olarak istediğinizi elde edecek uzun ve ayrıntılı bir prompt üretir.
+/chain
+Birden fazla prompt’u sırayla çalıştırır; her biri bir öncekinin üzerine inşa edilir.
+/system
+Claude’un davranış biçimini değiştiren özel bir sistem prompt’u yazar.
+PERSONA
+Claude’un belirli bir uzman türü olarak yanıt vermesini sağlar.
+/memory
+Claude’a konuşma boyunca belirli ayrıntıları hatırlamasını söyler.
+CONTEXT
+Arka plan bilgisi yükler; böylece her yanıt daha ilgili hale gelir.
+/rolelock
+Claude’u sohbetin geri kalanında belirli bir karaktere kilitler.
+PROMPTFIX
+Kötü yazılmış bir prompt’u alır ve gerçekten işe yarayacak şekilde yeniden yazar.
+
+
+Gizli Modlar
+/nofilter
+Mümkün olan en doğrudan ve filtresiz dürüst görüşü sunar.
+BEASTMODE
+Çıktı kalitesini mutlak azamiye taşır.
+/therapist
+Bir durumu eğitimli bir terapist gibi sizinle birlikte ele alır.
+CEOMODE
+Yüksek riskli iş kararları veren bir CEO gibi yanıt verir.
+/negotiate
+Size en iyi anlaşmayı sağlamak için tasarlanmış bir müzakere senaryosu yazar.
+FOUNDER
+Bir kurucunun bakış açısından girişim ve iş tavsiyeleri verir.
+/closer
+Anlaşmayı kapatmaya yönelik satış metinleri ya da mesajlar yazar.
+OPERATOR
+Bir görevi ek girdi gerektirmeden başından sonuna kadar yürütür.
+/unlocked
+Varsayılan ihtiyatlılığı kaldırır ve gerçek yanıtı verir.
+SENTINEL
+Her şeyi hatalar, riskler ve gözden kaçan ayrıntılar açısından inceler.

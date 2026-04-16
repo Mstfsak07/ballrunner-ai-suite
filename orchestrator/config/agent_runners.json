@@ -1,0 +1,14 @@
+{
+  "claude": {
+    "binary": "claude",
+    "template": "claude --dangerously-skip-permissions --model {model} -p \"{prompt_text}\""
+  },
+  "gemini": {
+    "binary": "gemini",
+    "template": "gemini --approval-mode yolo -m {model} -p \"{prompt_text}\""
+  },
+  "codex": {
+    "binary": "codex",
+    "template": "codex --model {model} --prompt-file \"{prompt_file}\""
+  }
+}

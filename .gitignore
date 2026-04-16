@@ -1,0 +1,21 @@
+# Unity / C#
+[Bb]in/
+[Oo]bj/
+Library/
+Temp/
+Logs/
+UserSettings/
+.vs/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.pyc
+
+# Orchestrator runtime
+orchestrator/runs/
+
+# OS
+.DS_Store
+Thumbs.db

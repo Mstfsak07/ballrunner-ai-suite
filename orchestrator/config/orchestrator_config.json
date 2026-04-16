@@ -1,0 +1,20 @@
+{
+  "prompting": {
+    "assignment_style": "compact",
+    "max_claude_hints": 4
+  },
+  "default_models": {
+    "codex": "gpt-5.3-codex",
+    "gemini": "gemini-3-pro",
+    "claude": "claude-sonnet-4-6"
+  },
+  "routing": {
+    "claude_opus_keywords": ["architecture", "system design", "critical", "complex", "deep refactor"],
+    "claude_sonnet_keywords": ["review", "analysis", "plan", "spec"],
+    "gemini_keywords": ["prototype", "ui", "narrative", "creative", "content"],
+    "gemini_flash_keywords": ["simple", "quick", "draft", "lightweight"],
+    "codex_keywords": ["bug", "implement", "code", "automation", "tests", "integration"],
+    "codex_heavy_keywords": ["architecture", "critical", "complex", "refactor", "performance"],
+    "codex_fast_keywords": ["simple", "quick", "draft", "boilerplate", "scaffold"]
+  }
+}

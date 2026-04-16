@@ -1,0 +1,482 @@
+{
+  "project": "Ball Runner Hybrid Casual",
+  "last_updated": "2026-04-16 21:14:52",
+  "tasks": [
+    {
+      "id": "P0-T001",
+      "phase": "Phase 0",
+      "title": "Unity project skeleton ve scene bootstrap kur",
+      "description": "Boot/MainMenu/Gameplay scene akisi, GameState enum ve temel state transition yapisi",
+      "priority": 1,
+      "tags": [
+        "implement",
+        "core",
+        "automation"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.4",
+      "assigned_at": "2026-04-16 18:07:41",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:12:22",
+      "completion_note": "Unity core state machine and scene bootstrap scripts created under Desktop/BallRunnerHybrid"
+    },
+    {
+      "id": "P0-T002",
+      "phase": "Phase 0",
+      "title": "Config ScriptableObject altyapisini kur",
+      "description": "GameConfig ve EconomyConfig tanimlari, merkezi config yukleme",
+      "priority": 2,
+      "tags": [
+        "implement",
+        "core",
+        "script"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:11:34",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:12:22",
+      "completion_note": "GameConfig+EconomyConfig and RuntimeConfigInstaller added to Unity workspace"
+    },
+    {
+      "id": "P1-T001",
+      "phase": "Phase 1",
+      "title": "PlayerMover auto-forward ve drag kontrol implement et",
+      "description": "Portrait oynanis icin sabit ileri, yatay drag clamp kontrol",
+      "priority": 3,
+      "tags": [
+        "implement",
+        "player",
+        "core"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:12:26",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:21:51",
+      "completion_note": "PlayerMover and FollowTargetCamera implemented for core movement"
+    },
+    {
+      "id": "P1-T002",
+      "phase": "Phase 1",
+      "title": "BallGroupController ile count senkron sistemini yaz",
+      "description": "Spawn/despawn, max cap 80, single source of truth count",
+      "priority": 4,
+      "tags": [
+        "implement",
+        "tests",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:13:05",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:13:42",
+      "completion_note": "BallGroupController and BallUnit added with max-cap, delta/multiplier APIs and formation rebuild"
+    },
+    {
+      "id": "P1-T003",
+      "phase": "Phase 1",
+      "title": "Gate sistemi +N -N x2 tamamla",
+      "description": "GateBase + Add/Subtract/Multiply gate ve idempotent trigger guvencesi",
+      "priority": 5,
+      "tags": [
+        "implement",
+        "gate",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:13:43",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:14:15",
+      "completion_note": "GateBase/Add/Subtract/Multiply implemented with one-time trigger consumption"
+    },
+    {
+      "id": "P1-T004",
+      "phase": "Phase 1",
+      "title": "Temel obstacle setini ekle",
+      "description": "SpinBarObstacle ve DamageWallObstacle ile count reduction",
+      "priority": 6,
+      "tags": [
+        "implement",
+        "obstacle",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:14:16",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:14:38",
+      "completion_note": "SpinBarObstacle and DamageWallObstacle added with BallGroup damage integration"
+    },
+    {
+      "id": "P1-T005",
+      "phase": "Phase 1",
+      "title": "Finish skor donusumunu ve result state akisini tamamla",
+      "description": "Finish alanina giris, kalan top -> skor/coin donusumu, win/fail",
+      "priority": 7,
+      "tags": [
+        "implement",
+        "core",
+        "ui"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:14:38",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:15:04",
+      "completion_note": "FinishZone and RunResultService implemented for score/coin conversion and win/fail state transition"
+    },
+    {
+      "id": "P2-T001",
+      "phase": "Phase 2",
+      "title": "LevelData pipeline ve 10 level onboarding seti olustur",
+      "description": "ScriptableObject tabanli level verisi ve 10 kisa level kurulum",
+      "priority": 8,
+      "tags": [
+        "prototype",
+        "ui",
+        "creative"
+      ],
+      "status": "completed",
+      "assigned_to": "gemini",
+      "assigned_model": "gemini-3-pro",
+      "assigned_at": "2026-04-16 18:15:28",
+      "selection_reason": "creative or rapid prototyping",
+      "completed_at": "2026-04-16 18:21:43",
+      "completion_note": "Fallback execution by Codex: LevelData SO pipeline + LevelCatalog + 10 onboarding presets created (Gemini headless dispatch timeout)"
+    },
+    {
+      "id": "P2-T002",
+      "phase": "Phase 2",
+      "title": "HUD + Win/Fail UI panellerini implement et",
+      "description": "Ball count, progress, coin mini counter ve panel button flow",
+      "priority": 9,
+      "tags": [
+        "implement",
+        "ui",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:21:51",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:22:39",
+      "completion_note": "HUDController, ResultPanel, GameplayUIBinder and GameManager finish-event wiring added"
+    },
+    {
+      "id": "P2-T003",
+      "phase": "Phase 2",
+      "title": "Coin ve iki upgrade sistemini entegre et",
+      "description": "Start Balls ve Coin Bonus upgrade, SaveManager ile persist",
+      "priority": 10,
+      "tags": [
+        "implement",
+        "economy",
+        "script"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:22:40",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:23:28",
+      "completion_note": "SaveManager, CurrencyManager, UpgradeManager and run reward integration implemented"
+    },
+    {
+      "id": "P2-T004",
+      "phase": "Phase 2",
+      "title": "Object pooling optimizasyonu yap",
+      "description": "Ball unit ve fx icin pooling, runtime allocation azaltma",
+      "priority": 11,
+      "tags": [
+        "implement",
+        "optimization",
+        "tests"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:23:28",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:24:03",
+      "completion_note": "BallPool implemented and BallGroupController switched to pooled spawn/release path"
+    },
+    {
+      "id": "P2-T005",
+      "phase": "Phase 2",
+      "title": "QA risk checklist dokumani hazirla",
+      "description": "Count desync, gate duplicate trigger, revive bug test vakalari",
+      "priority": 12,
+      "tags": [
+        "review",
+        "analysis",
+        "plan",
+        "spec"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 18:24:03",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 18:25:50",
+      "completion_note": "Fallback by Codex: QA checklist generated locally due Claude environment blocker"
+    },
+    {
+      "id": "P3-T001",
+      "phase": "Phase 3",
+      "title": "Ads integration hooklarini ekle",
+      "description": "Interstitial cadence, rewarded x2 coin, single revive rewarded",
+      "priority": 13,
+      "tags": [
+        "implement",
+        "ads",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:25:50",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:26:28",
+      "completion_note": "AdsManager mock hooks added for interstitial cadence, rewarded x2 coin, and single revive flow"
+    },
+    {
+      "id": "P3-T002",
+      "phase": "Phase 3",
+      "title": "Launch checklist ve internal test hazirligi",
+      "description": "Build ayarlari, icon/screenshot checklist, pre-release dogrulama",
+      "priority": 14,
+      "tags": [
+        "analysis",
+        "plan",
+        "review"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 18:26:28",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 18:26:42",
+      "completion_note": "Fallback by Codex: launch/internal-test checklist generated"
+    },
+    {
+      "id": "P4-T001",
+      "phase": "Phase 4",
+      "title": "LevelRuntimeBuilder ile gate/obstacle runtime spawn et",
+      "description": "LevelData icindeki gate ve obstacle kayitlarini prefab registry ile sahnede olustur",
+      "priority": 15,
+      "tags": [
+        "implement",
+        "integration",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:56:34",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:57:43",
+      "completion_note": "LevelRuntimeBuilder added with gate/obstacle prefab registries and runtime spawn from LevelData"
+    },
+    {
+      "id": "P4-T002",
+      "phase": "Phase 4",
+      "title": "Gameplay bootstrap akisini level + upgrade ile bagla",
+      "description": "Run baslangicinda start ball count ve secili levelin runtime apply edilmesi",
+      "priority": 16,
+      "tags": [
+        "implement",
+        "integration",
+        "core"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 18:57:43",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 18:58:20",
+      "completion_note": "GameplayBootstrapper added: level load/build, start-ball from upgrade, win-based level progress save"
+    },
+    {
+      "id": "P4-T003",
+      "phase": "Phase 4",
+      "title": "Playable smoke test protokolu dokumani hazirla",
+      "description": "Editor icinde 5 dakikalik oynanis dogrulama adimlari ve beklenen ciktilar",
+      "priority": 17,
+      "tags": [
+        "review",
+        "analysis",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 18:58:20",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 19:00:45",
+      "completion_note": "Fallback by Codex: smoke test protocol documented due Claude dispatch timeout"
+    },
+    {
+      "id": "P5-T001",
+      "phase": "Phase 5",
+      "title": "Revive akisini in-game resume yapisina cevir",
+      "description": "Fail panelden rewarded revive ile sahneden cikmadan oynanisa devam",
+      "priority": 18,
+      "tags": [
+        "implement",
+        "integration",
+        "core"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:00:01",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:00:54",
+      "completion_note": "Revive flow converted to in-game resume with GameManager.ResumeAfterRevive + ResultPanel revive/rewarded buttons"
+    },
+    {
+      "id": "P5-T002",
+      "phase": "Phase 5",
+      "title": "HUD coin/progress canli baglarini tamamla",
+      "description": "Coin degisimi event tabanli HUD'a, progress takip slider'a baglansin",
+      "priority": 19,
+      "tags": [
+        "implement",
+        "ui",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:00:55",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:01:44",
+      "completion_note": "HUDRuntimeBinder + CurrencyManager coin-change event added for live coin/progress UI"
+    },
+    {
+      "id": "P5-T003",
+      "phase": "Phase 5",
+      "title": "Phase 5 entegrasyon kontrol notu hazirla",
+      "description": "Revive, rewarded x2, HUD update akislari icin mini kontrol listesi",
+      "priority": 20,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 21:01:44",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 21:05:03",
+      "completion_note": "Claude output captured from timeout log; integration notes finalized locally"
+    },
+    {
+      "id": "P6-T001",
+      "phase": "Phase 6",
+      "title": "Rewarded x2 one-shot guard ekle",
+      "description": "Win panelde rewarded coin claim'i tek seferle sinirla, tekrar tiklamayi engelle",
+      "priority": 21,
+      "tags": [
+        "implement",
+        "ui",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:05:24",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:05:38",
+      "completion_note": "ResultPanel rewarded x2 claim is now one-shot with interactable lock and guard flag"
+    },
+    {
+      "id": "P6-T002",
+      "phase": "Phase 6",
+      "title": "Revive sonrasi HUD force-refresh ekle",
+      "description": "Revive callback sonrasinda HUD coin/progress degerlerini anlik yenile",
+      "priority": 22,
+      "tags": [
+        "implement",
+        "ui",
+        "core"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:05:38",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:06:09",
+      "completion_note": "HUDRuntimeBinder.ForceRefresh added and wired to rewarded/revive callbacks"
+    },
+    {
+      "id": "P7-T001",
+      "phase": "Phase 7",
+      "title": "Level progress loop ve reset kontrolu ekle",
+      "description": "Level index'i catalog boyutuna gore dongusel yonet, reset/replay helper metodlari ekle",
+      "priority": 23,
+      "tags": [
+        "implement",
+        "core",
+        "integration"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:11:41",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:12:14",
+      "completion_note": "GameplayBootstrapper now supports loop-safe level index, reset/replay helpers, and persistent normalized progress"
+    },
+    {
+      "id": "P7-T002",
+      "phase": "Phase 7",
+      "title": "Tutorial hand ilk dragde gizlenme akisini ekle",
+      "description": "Ilk run icin swipe gostergesi, ilk inputta gizle ve save et",
+      "priority": 24,
+      "tags": [
+        "implement",
+        "ui",
+        "code"
+      ],
+      "status": "completed",
+      "assigned_to": "codex",
+      "assigned_model": "gpt-5.3-codex",
+      "assigned_at": "2026-04-16 21:12:14",
+      "selection_reason": "implementation heavy and deterministic execution",
+      "completed_at": "2026-04-16 21:12:46",
+      "completion_note": "TutorialHandController added with first-input hide and persisted seen-state"
+    },
+    {
+      "id": "P7-T003",
+      "phase": "Phase 7",
+      "title": "Phase 7 regression checklist dokumani ekle",
+      "description": "Level loop, tutorial hide, revive ve rewarded tekrar test adimlarini yaz",
+      "priority": 25,
+      "tags": [
+        "analysis",
+        "review",
+        "plan"
+      ],
+      "status": "completed",
+      "assigned_to": "claude",
+      "assigned_model": "claude-sonnet-4-6",
+      "assigned_at": "2026-04-16 21:12:46",
+      "selection_reason": "analysis and planning workload",
+      "completed_at": "2026-04-16 21:14:52",
+      "completion_note": "Claude partial output captured from dispatch log; regression checklist finalized locally"
+    }
+  ]
+}
