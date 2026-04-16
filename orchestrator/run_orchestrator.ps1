@@ -16,7 +16,8 @@ param(
   [switch]$ContinueOnError,
   [switch]$ExportCompactQueue,
   [int]$CompactLimit = 25,
-  [switch]$CompactIncludeAssigned
+  [switch]$CompactIncludeAssigned,
+  [switch]$UseDispatchProfile
 )
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -43,11 +44,14 @@ if ($CompleteTaskId) {
 
 if ($Dispatch) {
   if ($ExecuteDispatch) {
+    $args = @("$root\dispatch.py", "--execute")
     if ($CleanupStale) {
-      python "$root\dispatch.py" --execute --cleanup-stale
-    } else {
-      python "$root\dispatch.py" --execute
+      $args += "--cleanup-stale"
     }
+    if ($UseDispatchProfile) {
+      $args += "--use-owner-profile"
+    }
+    python @args
   } else {
     python "$root\dispatch.py"
   }
@@ -86,6 +90,7 @@ if ($Cycle) {
       "--retries", "$DispatchRetries"
     )
     if ($CleanupStale) { $dispatchArgs += "--cleanup-stale" }
+    if ($UseDispatchProfile) { $dispatchArgs += "--use-owner-profile" }
 
     python @dispatchArgs
     $dispatchCode = $LASTEXITCODE
@@ -128,3 +133,4 @@ Write-Host "  .\\run_orchestrator.ps1 -HealthCheck"
 Write-Host "  .\\run_orchestrator.ps1 -HealthCheck -CleanupStale"
 Write-Host "  .\\run_orchestrator.ps1 -Cycle -CycleLimit 3 -DispatchTimeoutSec 120 -DispatchRetries 1 -AutoComplete"
 Write-Host "  .\\run_orchestrator.ps1 -ExportCompactQueue -CompactLimit 30 -CompactIncludeAssigned"
+Write-Host "  .\\run_orchestrator.ps1 -Dispatch -ExecuteDispatch -UseDispatchProfile"

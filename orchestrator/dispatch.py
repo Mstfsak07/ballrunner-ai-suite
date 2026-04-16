@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 HANDOFF = ROOT / "state" / "CURRENT_HANDOFF.md"
 RUNNERS = ROOT / "config" / "agent_runners.json"
+CONFIG = ROOT / "config" / "orchestrator_config.json"
 RUNS = ROOT / "runs"
 
 
@@ -93,6 +94,7 @@ def main() -> None:
     parser.add_argument("--model", help="override model")
     parser.add_argument("--run-file", help="override run file path relative to repo root")
     parser.add_argument("--log-tail-lines", type=int, default=60, help="lines to print from log on failure")
+    parser.add_argument("--use-owner-profile", action="store_true", help="use owner dispatch profile from orchestrator config")
     args = parser.parse_args()
 
     handoff_text = HANDOFF.read_text(encoding="utf-8")
@@ -140,16 +142,26 @@ def main() -> None:
     if args.cleanup_stale:
         cleanup_stale_node_processes()
 
+    timeout_sec = args.timeout_sec
+    retries = args.retries
+    if args.use_owner_profile:
+        config = json.loads(CONFIG.read_text(encoding="utf-8"))
+        profiles = config.get("dispatch_profiles", {})
+        profile = profiles.get(data["owner"], {})
+        timeout_sec = int(profile.get("timeout_sec", timeout_sec))
+        retries = int(profile.get("retries", retries))
+        print(f"Dispatch profile active: owner={data['owner']} timeout={timeout_sec}s retries={retries}")
+
     RUNS.mkdir(parents=True, exist_ok=True)
     run_log = RUNS / f"dispatch-{datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
     run_log.write_text(
         (
             f"task={data['task']}\nowner={data['owner']}\nmodel={data['model']}\n"
-            f"timeout_sec={args.timeout_sec}\nretries={args.retries}\ncommand={command}\n"
+            f"timeout_sec={timeout_sec}\nretries={retries}\ncommand={command}\n"
         ),
         encoding="utf-8",
     )
-    code = run_with_retries(command, args.timeout_sec, args.retries, run_log)
+    code = run_with_retries(command, timeout_sec, retries, run_log)
     print(f"Dispatch log: {run_log}")
     if code != 0:
         try:

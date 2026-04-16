@@ -9,12 +9,67 @@
     "claude": "claude-sonnet-4-6"
   },
   "routing": {
-    "claude_opus_keywords": ["architecture", "system design", "critical", "complex", "deep refactor"],
-    "claude_sonnet_keywords": ["review", "analysis", "plan", "spec"],
-    "gemini_keywords": ["prototype", "ui", "narrative", "creative", "content"],
-    "gemini_flash_keywords": ["simple", "quick", "draft", "lightweight"],
-    "codex_keywords": ["bug", "implement", "code", "automation", "tests", "integration"],
-    "codex_heavy_keywords": ["architecture", "critical", "complex", "refactor", "performance"],
-    "codex_fast_keywords": ["simple", "quick", "draft", "boilerplate", "scaffold"]
+    "claude_opus_keywords": [
+      "architecture",
+      "system design",
+      "critical",
+      "complex",
+      "deep refactor"
+    ],
+    "claude_sonnet_keywords": [
+      "review",
+      "analysis",
+      "plan",
+      "spec"
+    ],
+    "gemini_keywords": [
+      "prototype",
+      "ui",
+      "narrative",
+      "creative",
+      "content"
+    ],
+    "gemini_flash_keywords": [
+      "simple",
+      "quick",
+      "draft",
+      "lightweight"
+    ],
+    "codex_keywords": [
+      "bug",
+      "implement",
+      "code",
+      "automation",
+      "tests",
+      "integration"
+    ],
+    "codex_heavy_keywords": [
+      "architecture",
+      "critical",
+      "complex",
+      "refactor",
+      "performance"
+    ],
+    "codex_fast_keywords": [
+      "simple",
+      "quick",
+      "draft",
+      "boilerplate",
+      "scaffold"
+    ]
+  },
+  "dispatch_profiles": {
+    "codex": {
+      "timeout_sec": 90,
+      "retries": 1
+    },
+    "gemini": {
+      "timeout_sec": 60,
+      "retries": 1
+    },
+    "claude": {
+      "timeout_sec": 120,
+      "retries": 2
+    }
   }
 }
