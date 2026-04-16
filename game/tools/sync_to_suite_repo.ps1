@@ -16,4 +16,15 @@ New-Item -ItemType Directory -Force -Path $gameTarget,$orcTarget | Out-Null
 robocopy $SourceGame $gameTarget /E /XD .git Library Temp Logs Obj Build .vs release-snapshots /XF *.user *.suo | Out-Null
 robocopy $SourceOrchestrator $orcTarget /E /XD .git runs __pycache__ | Out-Null
 
+$volatileSuitePaths = @(
+  (Join-Path $orcTarget "state/CURRENT_HANDOFF.md"),
+  (Join-Path $orcTarget "state/SESSION_STATE.md"),
+  (Join-Path $orcTarget "tasks/backlog.json")
+)
+foreach ($volatilePath in $volatileSuitePaths) {
+  if (Test-Path $volatilePath) {
+    Remove-Item -LiteralPath $volatilePath -Force
+  }
+}
+
 Write-Host "Suite sync done."
