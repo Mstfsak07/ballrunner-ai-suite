@@ -88,10 +88,20 @@ def main() -> None:
     parser.add_argument("--timeout-sec", type=int, default=120, help="timeout per attempt")
     parser.add_argument("--retries", type=int, default=2, help="retry count")
     parser.add_argument("--cleanup-stale", action="store_true", help="cleanup stale node processes first")
+    parser.add_argument("--owner", help="override owner (claude/gemini/codex)")
+    parser.add_argument("--model", help="override model")
+    parser.add_argument("--run-file", help="override run file path relative to repo root")
+    parser.add_argument("--log-tail-lines", type=int, default=60, help="lines to print from log on failure")
     args = parser.parse_args()
 
     handoff_text = HANDOFF.read_text(encoding="utf-8")
     data = parse_handoff(handoff_text)
+    if args.owner:
+        data["owner"] = args.owner
+    if args.model:
+        data["model"] = args.model
+    if args.run_file:
+        data["run_file"] = args.run_file
 
     if not data["owner"] or data["owner"] == "none":
         raise SystemExit("No active handoff.")
@@ -140,6 +150,13 @@ def main() -> None:
     code = run_with_retries(command, args.timeout_sec, args.retries, run_log)
     print(f"Dispatch log: {run_log}")
     if code != 0:
+        try:
+            lines = run_log.read_text(encoding="utf-8").splitlines()
+            tail = lines[-args.log_tail_lines :] if args.log_tail_lines > 0 else lines
+            print("\n--- log tail ---")
+            print("\n".join(tail))
+        except Exception:
+            pass
         raise SystemExit(code)
 
 
