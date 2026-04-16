@@ -17,7 +17,9 @@ param(
   [switch]$ExportCompactQueue,
   [int]$CompactLimit = 25,
   [switch]$CompactIncludeAssigned,
-  [switch]$UseDispatchProfile
+  [switch]$UseDispatchProfile,
+  [switch]$DispatchAnalytics,
+  [int]$AnalyticsLimit = 30
 )
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -122,6 +124,11 @@ if ($ExportCompactQueue) {
   exit $LASTEXITCODE
 }
 
+if ($DispatchAnalytics) {
+  python "$root\analyze_dispatch_runs.py" --limit $AnalyticsLimit
+  exit $LASTEXITCODE
+}
+
 Write-Host "Usage:"
 Write-Host "  .\\run_orchestrator.ps1 -AssignNext"
 Write-Host "  .\\run_orchestrator.ps1 -TaskId TASK-001"
@@ -134,3 +141,4 @@ Write-Host "  .\\run_orchestrator.ps1 -HealthCheck -CleanupStale"
 Write-Host "  .\\run_orchestrator.ps1 -Cycle -CycleLimit 3 -DispatchTimeoutSec 120 -DispatchRetries 1 -AutoComplete"
 Write-Host "  .\\run_orchestrator.ps1 -ExportCompactQueue -CompactLimit 30 -CompactIncludeAssigned"
 Write-Host "  .\\run_orchestrator.ps1 -Dispatch -ExecuteDispatch -UseDispatchProfile"
+Write-Host "  .\\run_orchestrator.ps1 -DispatchAnalytics -AnalyticsLimit 40"
