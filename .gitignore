@@ -18,6 +18,14 @@ orchestrator/runs/
 orchestrator/state/CURRENT_HANDOFF.md
 orchestrator/state/SESSION_STATE.md
 orchestrator/tasks/backlog.json
+orchestrator/state/*.md
+orchestrator/state/*.txt
+orchestrator/PHASE_PLAN.md
+
+# Working docs
+game/OPS_*.md
+game/PHASE*.md
+game/PREFLIGHT_*.md
 
 # OS
 .DS_Store
