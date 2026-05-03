@@ -71,7 +71,7 @@ Anahtar kelimeler `config/orchestrator_config.json` icinden degistirilebilir.
 - `--execute` ile komutu gercekten calistirir.
 - Claude komutu: `claude --dangerously-skip-permissions --model claude-sonnet-4-6` veya `claude-opus-4-6`
 - Gemini komutu: `gemini --approval-mode yolo -m gemini-3-pro` veya `gemini-3-flash`
-- CLI parametre farklari varsa `config/agent_runners.json` icindeki template'i kendi kurulumuna gore guncelle.
+- CLI parametre farklari varsa `config/agent_runners.json` icindeki `args` dizisini kendi kurulumuna gore guncelle.
 
 ## Token Saving
 - Assignment promptlari compact formatta uretilir (daha az token).

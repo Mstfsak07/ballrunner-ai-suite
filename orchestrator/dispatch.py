@@ -1,6 +1,5 @@
 import argparse
 import json
-import re
 import shutil
 import subprocess
 from datetime import datetime
@@ -27,10 +26,6 @@ def parse_handoff(text: str) -> dict:
     }
 
 
-def shell_quote(text: str) -> str:
-    return text.replace("\ufeff", "").replace("\"", "\\\"")
-
-
 def cleanup_stale_node_processes() -> None:
     # Clean up stale node processes started by claude/gemini CLIs.
     command = (
@@ -42,19 +37,34 @@ def cleanup_stale_node_processes() -> None:
     subprocess.run(["powershell", "-NoProfile", "-Command", command], check=False)
 
 
-def run_with_retries(command: str, timeout_sec: int, retries: int, run_log: Path) -> int:
+def render_args(binary: str, args_template: list[str], replacements: dict[str, str]) -> list[str]:
+    rendered = [binary]
+    for item in args_template:
+        value = item.format(**replacements).replace("\ufeff", "")
+        rendered.append(value)
+    return rendered
+
+
+def pretty_command(command_args: list[str]) -> str:
+    return subprocess.list2cmdline(command_args)
+
+
+def run_command(command_args: list[str], timeout_sec: int):
+    return subprocess.run(
+        command_args,
+        check=False,
+        timeout=timeout_sec,
+        capture_output=True,
+        text=True,
+    )
+
+
+def run_with_retries(command_args: list[str], timeout_sec: int, retries: int, run_log: Path) -> int:
     last_code = 1
     for attempt in range(1, retries + 1):
         started = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
-            result = subprocess.run(
-                command,
-                shell=True,
-                check=False,
-                timeout=timeout_sec,
-                capture_output=True,
-                text=True,
-            )
+            result = run_command(command_args, timeout_sec)
             run_log.write_text(
                 run_log.read_text(encoding="utf-8")
                 + (
@@ -97,8 +107,16 @@ def main() -> None:
     parser.add_argument("--use-owner-profile", action="store_true", help="use owner dispatch profile from orchestrator config")
     args = parser.parse_args()
 
-    handoff_text = HANDOFF.read_text(encoding="utf-8")
-    data = parse_handoff(handoff_text)
+    data = {
+        "task": "",
+        "owner": "",
+        "model": "",
+        "run_file": "",
+    }
+    if HANDOFF.exists():
+        handoff_text = HANDOFF.read_text(encoding="utf-8")
+        data.update(parse_handoff(handoff_text))
+
     if args.owner:
         data["owner"] = args.owner
     if args.model:
@@ -119,25 +137,30 @@ def main() -> None:
         raise SystemExit(f"Prompt file not found: {prompt_file}")
 
     prompt_text = prompt_file.read_text(encoding="utf-8")
-    command = runner["template"].format(
-        model=data["model"],
-        prompt_file=str(prompt_file),
-        prompt_text=shell_quote(prompt_text),
+    binary = runner["binary"]
+    binary_path = shutil.which(binary)
+    if binary_path is None:
+        raise SystemExit(f"Binary not found in PATH: {binary}")
+
+    command_args = render_args(
+        binary_path,
+        runner["args"],
+        {
+            "model": data["model"],
+            "prompt_file": str(prompt_file),
+            "prompt_text": prompt_text,
+        },
     )
 
     print(f"Task: {data['task']}")
     print(f"Owner: {data['owner']}")
     print(f"Model: {data['model']}")
-    safe_command = command.encode("cp1254", errors="replace").decode("cp1254")
+    safe_command = pretty_command(command_args).encode("cp1254", errors="replace").decode("cp1254")
     print(f"Command: {safe_command}")
 
     if not args.execute:
         print("Dry run only. Use --execute to run.")
         return
-
-    binary = runner["binary"]
-    if shutil.which(binary) is None:
-        raise SystemExit(f"Binary not found in PATH: {binary}")
 
     if args.cleanup_stale:
         cleanup_stale_node_processes()
@@ -157,11 +180,11 @@ def main() -> None:
     run_log.write_text(
         (
             f"task={data['task']}\nowner={data['owner']}\nmodel={data['model']}\n"
-            f"timeout_sec={timeout_sec}\nretries={retries}\ncommand={command}\n"
+            f"timeout_sec={timeout_sec}\nretries={retries}\ncommand={pretty_command(command_args)}\n"
         ),
         encoding="utf-8",
     )
-    code = run_with_retries(command, timeout_sec, retries, run_log)
+    code = run_with_retries(command_args, timeout_sec, retries, run_log)
     print(f"Dispatch log: {run_log}")
     if code != 0:
         try:

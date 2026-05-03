@@ -16,6 +16,7 @@ function Invoke-DispatchTest {
 
   $tempRel = "tasks/_smoke_$Owner.md"
   $tempAbs = Join-Path $root $tempRel
+  New-Item -ItemType Directory -Force -Path (Split-Path -Parent $tempAbs) | Out-Null
   Set-Content -Path $tempAbs -Value $PromptText -Encoding ASCII
 
   $args = @(

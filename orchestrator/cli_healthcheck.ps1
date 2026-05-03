@@ -26,12 +26,14 @@ if ($CleanupStale) {
 $checks = @(
   @{
     name = 'claude';
-    cmd = 'claude --dangerously-skip-permissions --model claude-sonnet-4-6 -p "Reply exactly: OK"';
+    file = 'claude';
+    args = @('--dangerously-skip-permissions', '--model', 'claude-sonnet-4-6', '-p', 'Reply exactly: OK');
     workdir = $tempRoot
   },
   @{
     name = 'gemini';
-    cmd = 'gemini --approval-mode yolo -m gemini-3-flash -o text -p "Reply exactly OK. Do not use tools. Do not read files. Do not inspect workspace."';
+    file = 'gemini';
+    args = @('--approval-mode', 'yolo', '-m', 'gemini-3-flash', '-p', 'Reply exactly OK. Do not use tools. Do not read files. Do not inspect workspace.');
     workdir = $tempRoot
   }
 )
@@ -40,15 +42,19 @@ foreach ($c in $checks) {
   Write-Log "=== $($c.name) ==="
   try {
     $job = Start-Job -ScriptBlock {
-      param($command, $workdir)
+      param($file, $cliArgs, $workdir)
       Set-Location $workdir
-      powershell -NoProfile -NonInteractive -Command $command 2>&1 | Out-String
-    } -ArgumentList $c.cmd, $c.workdir
+      & $file @cliArgs 2>&1 | Out-String
+    } -ArgumentList $c.file, $c.args, $c.workdir
 
     $completed = Wait-Job $job -Timeout $TimeoutSec
     if ($completed) {
       $out = Receive-Job $job
-      Write-Log "status=ok"
+      if ($job.State -eq 'Failed') {
+        Write-Log "status=error"
+      } else {
+        Write-Log "status=ok"
+      }
       Write-Log $out
     } else {
       Stop-Job $job | Out-Null
