@@ -13,14 +13,8 @@ UserSettings/
 __pycache__/
 *.pyc
 
-# Orchestrator runtime
-orchestrator/runs/
-orchestrator/state/CURRENT_HANDOFF.md
-orchestrator/state/SESSION_STATE.md
-orchestrator/tasks/backlog.json
-orchestrator/state/*.md
-orchestrator/state/*.txt
-orchestrator/PHASE_PLAN.md
+# Orchestrator
+orchestrator/
 
 # Working docs
 game/OPS_*.md
